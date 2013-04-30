@@ -1,0 +1,11 @@
+#!/bin/bash
+for f in *.tgz; do tar xvf $f; done
+
+orig_files=(AQDM_748395395.txt AQDM_748384247.txt AQDM_543836259.txt AQDM_748371596.txt AQDM_748361049.txt AQDM_782356866.txt AQDM_748409164.txt AQDM_748415518.txt AQDM_748340397.txt AQDM_748358319.txt)
+dest_files=(PM25_2005.csv PM25_2006.csv PM25_2007.csv PM25_2008.csv PM25_2009.csv Ozone_2005.csv Ozone_2006.csv Ozone_2007.csv Ozone_2008.csv Ozone_2009.csv)
+count=0
+
+for file in "${orig_files[@]}"; do
+  mv ${orig_files[$count]} ${dest_files[$count]}
+  count=`expr $count + 1`
+done
